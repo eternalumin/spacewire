@@ -1,0 +1,64 @@
+network:
+  interface: "eth0"
+  protocol_id: 35093
+  mtu: 1500
+  chunk_size: 1000
+  timeout: 30.0
+  retry_count: 3
+
+simulation:
+  error_rate: 0.1
+  latency_base: 0.001
+  latency_variance: 0.0001
+  packet_delay: 0.5
+  topology: "point-to-point"
+
+qos:
+  enabled: true
+  num_priorities: 4
+  virtual_channels: 8
+  bandwidth_allocation:
+    0: 0.4
+    1: 0.3
+    2: 0.2
+    3: 0.1
+
+gui:
+  window_width: 1200
+  window_height: 800
+  theme: "dark"
+  animation_speed: 30
+  show_metrics: true
+  auto_refresh_interval: 1000
+
+devices:
+  - id: 0x01
+    name: "OBC"
+    type: "computer"
+    x: 150
+    y: 300
+    description: "On-Board Computer"
+  - id: 0x02
+    name: "Router"
+    type: "router"
+    x: 350
+    y: 100
+    description: "Network Router"
+  - id: 0x03
+    name: "Camera"
+    type: "sensor"
+    x: 550
+    y: 100
+    description: "Camera Sensor"
+  - id: 0x04
+    name: "SSD"
+    type: "storage"
+    x: 350
+    y: 500
+    description: "Solid State Drive"
+  - id: 0x05
+    name: "AOCS"
+    type: "sensor"
+    x: 550
+    y: 500
+    description: "Attitude & Orbit Control"
